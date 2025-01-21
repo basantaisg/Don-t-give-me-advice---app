@@ -9,6 +9,10 @@ const App = () => {
     fetchAdvice();
   }, []);
 
+  const genNewAdvice = () => {
+    fetchAdvice();
+  };
+
   const fetchAdvice = () => {
     axios
       .get('https://api.adviceslip.com/advice')
@@ -26,6 +30,14 @@ const App = () => {
       <div className='App'>
         <div className='card'>
           <h1 className='heading'>{advice}</h1>
+          <button
+            onClick={() => {
+              genNewAdvice();
+            }}
+            className='button'
+          >
+            <span>Give ME ADVICE!</span>
+          </button>
         </div>
       </div>
     </>
